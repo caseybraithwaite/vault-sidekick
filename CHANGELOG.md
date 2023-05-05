@@ -1,3 +1,6 @@
+#### **Version v0.3.19**
+* 5242daf update to go packages, alpine version and dockerfile cleanup
+
 #### **Version v0.3.18**
 * 880585b request auth token feature [#PR112](https://github.com/UKHomeOffice/vault-sidekick/pull/112)
 
