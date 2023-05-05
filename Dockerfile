@@ -1,13 +1,14 @@
-FROM alpine:3.12
-MAINTAINER Rohith <gambol99@gmail.com>
+FROM alpine:3.17
 
-RUN apk update && \
-    apk add ca-certificates bash
+LABEL org.opencontainers.image.authors="gambol99@gmail.com"
+
+RUN apk update --no-cache && \
+    apk upgrade --no-cache && \
+    apk add --no-cache ca-certificates bash
 
 RUN adduser -D vault
 
-ADD bin/vault-sidekick /vault-sidekick
-RUN chmod 755 /vault-sidekick
+ADD --chmod=755 bin/vault-sidekick /vault-sidekick
 
 USER vault
 
